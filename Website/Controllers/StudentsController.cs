@@ -3,37 +3,75 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Website.Utils;
+using Website.ViewModels;
 
 namespace Website.Controllers
 {
     public class StudentsController : Controller
     {
-        // GET: Students
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            List<StudentVM> studentVMs = new List<StudentVM>();
+            using(StudentService.StudentClient service = new StudentService.StudentClient())
+            {
+                foreach (var item in service.GetStudents())
+                {
+                    studentVMs.Add(new StudentVM(item));
+                }
+            }
+            return View(studentVMs);
         }
 
-        // GET: Students/Details/5
+        [HttpGet]
         public ActionResult Details(int id)
         {
-            return View();
+            StudentVM studentVM = new StudentVM();
+            using (StudentService.StudentClient service = new StudentService.StudentClient())
+            {
+                var studentDto = service.GetStudentById(id);
+                studentVM = new StudentVM(studentDto);
+            }
+            return View(studentVM);
         }
 
-        // GET: Students/Create
+        [HttpGet]
         public ActionResult Create()
         {
+            ViewBag.Nationalities = LoadDataUtils.LoadNationalityData();
+            ViewBag.Faculties = LoadDataUtils.LoadFacultyData();
             return View();
         }
 
-        // POST: Students/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(StudentVM studentVM)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                using (StudentService.StudentClient service = new StudentService.StudentClient())
+                {
+                    StudentService.StudentDto studentDto = new StudentService.StudentDto
+                    {
+                        Id = studentVM.Id,
+                        FirstName = studentVM.FirstName,
+                        LastName = studentVM.LastName,
+                        DateOfBirth = studentVM.DateOfBrith,
+                        Comment = studentVM.Comment,
+                        Faculty = new StudentService.FacultyDto
+                        {
+                            Id = studentVM.FacultyId
+                        },
+                        Nationality = new StudentService.NationalityDto
+                        {
+                            Id = studentVM.NationalityId
+                        }
+                    };
+                    service.PostStudent(studentDto);
+                }
+                ViewBag.Nationalities = LoadDataUtils.LoadNationalityData();
+                ViewBag.Faculties = LoadDataUtils.LoadFacultyData();
                 return RedirectToAction("Index");
             }
             catch
@@ -42,20 +80,48 @@ namespace Website.Controllers
             }
         }
 
-        // GET: Students/Edit/5
+        [HttpGet]
         public ActionResult Edit(int id)
         {
-            return View();
+            StudentVM studentVM = new StudentVM();
+            using (StudentService.StudentClient service = new StudentService.StudentClient())
+            {
+                var studentDto = service.GetStudentById(id);
+                studentVM = new StudentVM(studentDto);
+            }
+            ViewBag.Nationalities = LoadDataUtils.LoadNationalityData();
+            ViewBag.Faculties = LoadDataUtils.LoadFacultyData();
+            return View(studentVM);
         }
 
-        // POST: Students/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(StudentVM studentVM)
         {
             try
             {
-                // TODO: Add update logic here
-
+                using (StudentService.StudentClient service = new StudentService.StudentClient())
+                {
+                    StudentService.StudentDto studentDto = new StudentService.StudentDto
+                    {
+                        Id = studentVM.Id,
+                        FirstName = studentVM.FirstName,
+                        LastName = studentVM.LastName,
+                        DateOfBirth = studentVM.DateOfBrith,
+                        Comment = studentVM.Comment,
+                        Faculty = new StudentService.FacultyDto
+                        {
+                            Id = studentVM.FacultyId
+                        },
+                        Nationality = new StudentService.NationalityDto
+                        {
+                            Id = studentVM.NationalityId
+                        }
+                    };
+                    service.PostStudent(studentDto);
+                }
+                ViewBag.Nationalities = LoadDataUtils.LoadNationalityData();
+                ViewBag.Faculties = LoadDataUtils.LoadFacultyData();
                 return RedirectToAction("Index");
             }
             catch
@@ -64,26 +130,13 @@ namespace Website.Controllers
             }
         }
 
-        // GET: Students/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
-        }
-
-        // POST: Students/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
+            using (StudentService.StudentClient service = new StudentService.StudentClient())
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                service.DeleteStudent(id);
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
     }
 }

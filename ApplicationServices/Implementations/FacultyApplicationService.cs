@@ -43,7 +43,7 @@ namespace ApplicationServices.Implementations
                         Id=faculty.Id,
                         Name=faculty.Name,
                         City=faculty.City,
-                        Address=faculty.City
+                        Address=faculty.Address
                     };
                 }
             }
@@ -62,7 +62,14 @@ namespace ApplicationServices.Implementations
             {
                 using (UnitOfWork unitOfWork = new UnitOfWork())
                 {
-                    unitOfWork.FacultyRepository.Insert(faculty);
+                    if (facultyDto.Id==0)
+                    {
+                        unitOfWork.FacultyRepository.Insert(faculty);
+                    }
+                    else
+                    {
+                        unitOfWork.FacultyRepository.Update(faculty);
+                    }
                     unitOfWork.Save();
                 }
                 return true;

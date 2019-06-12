@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e2f18142-e6ba-4616-8d00-872235ddf3c8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="efbc2d56-5343-425b-a064-aadd33cc6981" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:53947/Faculty.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Faculty.wsdl" MetadataType="Wsdl" ID="5409ee39-514b-4257-928c-2d41a9a62393" SourceId="1" SourceUrl="http://localhost:53947/Faculty.svc?wsdl" />
-    <MetadataFile FileName="Faculty.xsd" MetadataType="Schema" ID="ac7aebbc-9670-40ec-8cf0-05dcda92a51d" SourceId="1" SourceUrl="http://localhost:53947/Faculty.svc?xsd=xsd0" />
-    <MetadataFile FileName="Faculty.disco" MetadataType="Disco" ID="c7c55b14-5eef-4c38-8305-7901656f6253" SourceId="1" SourceUrl="http://localhost:53947/Faculty.svc?disco" />
-    <MetadataFile FileName="Faculty1.xsd" MetadataType="Schema" ID="b49b52dd-e086-4eda-a40b-07cc370e55c2" SourceId="1" SourceUrl="http://localhost:53947/Faculty.svc?xsd=xsd1" />
-    <MetadataFile FileName="Faculty2.xsd" MetadataType="Schema" ID="ab9c246e-2ecf-4aa9-b611-2e91bf97dd45" SourceId="1" SourceUrl="http://localhost:53947/Faculty.svc?xsd=xsd2" />
+    <MetadataFile FileName="Faculty.wsdl" MetadataType="Wsdl" ID="97a55513-a175-4a18-a415-026468d0b565" SourceId="1" SourceUrl="http://localhost:53947/Faculty.svc?wsdl" />
+    <MetadataFile FileName="Faculty.xsd" MetadataType="Schema" ID="12dcd866-28a9-4373-ba33-ab8e7f97386a" SourceId="1" SourceUrl="http://localhost:53947/Faculty.svc?xsd=xsd0" />
+    <MetadataFile FileName="Faculty.disco" MetadataType="Disco" ID="c3fc7539-39a7-4baa-97b4-ff6108aa20a4" SourceId="1" SourceUrl="http://localhost:53947/Faculty.svc?disco" />
+    <MetadataFile FileName="Faculty1.xsd" MetadataType="Schema" ID="11ac0ec4-1473-4a92-a789-c44b27f3af96" SourceId="1" SourceUrl="http://localhost:53947/Faculty.svc?xsd=xsd1" />
+    <MetadataFile FileName="Faculty2.xsd" MetadataType="Schema" ID="e33bcf05-cd61-4d00-b21d-5a98a10b2fbb" SourceId="1" SourceUrl="http://localhost:53947/Faculty.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

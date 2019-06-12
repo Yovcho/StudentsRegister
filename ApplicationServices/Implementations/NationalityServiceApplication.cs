@@ -57,8 +57,15 @@ namespace ApplicationServices.Implementations
             {
                 using (UnitOfWork unitOfWork = new UnitOfWork())
                 {
-                    unitOfWork.NationalityRepositroy.Insert(nationality);
-                    unitOfWork.Save();
+                    if (nationalityDto.Id == 0)
+                    {
+                        unitOfWork.NationalityRepositroy.Insert(nationality);
+                    }
+                    else
+                    {
+                        unitOfWork.NationalityRepositroy.Update(nationality);
+                    }
+                        unitOfWork.Save();
                 }
                     return true;
             }

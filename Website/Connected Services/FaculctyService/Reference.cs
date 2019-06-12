@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Website.FacultyService {
+namespace Website.FaculctyService {
     using System.Runtime.Serialization;
     using System;
     
@@ -107,7 +107,7 @@ namespace Website.FacultyService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FacultyService.IFaculty")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FaculctyService.IFaculty")]
     public interface IFaculty {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFaculty/Message", ReplyAction="http://tempuri.org/IFaculty/MessageResponse")]
@@ -117,28 +117,28 @@ namespace Website.FacultyService {
         System.Threading.Tasks.Task<string> MessageAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFaculty/GetFaculties", ReplyAction="http://tempuri.org/IFaculty/GetFacultiesResponse")]
-        Website.FacultyService.FacultyDto[] GetFaculties();
+        Website.FaculctyService.FacultyDto[] GetFaculties();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFaculty/GetFaculties", ReplyAction="http://tempuri.org/IFaculty/GetFacultiesResponse")]
-        System.Threading.Tasks.Task<Website.FacultyService.FacultyDto[]> GetFacultiesAsync();
+        System.Threading.Tasks.Task<Website.FaculctyService.FacultyDto[]> GetFacultiesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFaculty/GetFacultyById", ReplyAction="http://tempuri.org/IFaculty/GetFacultyByIdResponse")]
-        Website.FacultyService.FacultyDto GetFacultyById(int id);
+        Website.FaculctyService.FacultyDto GetFacultyById(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFaculty/GetFacultyById", ReplyAction="http://tempuri.org/IFaculty/GetFacultyByIdResponse")]
-        System.Threading.Tasks.Task<Website.FacultyService.FacultyDto> GetFacultyByIdAsync(int id);
+        System.Threading.Tasks.Task<Website.FaculctyService.FacultyDto> GetFacultyByIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFaculty/PostFaculty", ReplyAction="http://tempuri.org/IFaculty/PostFacultyResponse")]
-        string PostFaculty(Website.FacultyService.FacultyDto facultyDto);
+        string PostFaculty(Website.FaculctyService.FacultyDto facultyDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFaculty/PostFaculty", ReplyAction="http://tempuri.org/IFaculty/PostFacultyResponse")]
-        System.Threading.Tasks.Task<string> PostFacultyAsync(Website.FacultyService.FacultyDto facultyDto);
+        System.Threading.Tasks.Task<string> PostFacultyAsync(Website.FaculctyService.FacultyDto facultyDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFaculty/PutFaculty", ReplyAction="http://tempuri.org/IFaculty/PutFacultyResponse")]
-        string PutFaculty(Website.FacultyService.FacultyDto facultyDto);
+        string PutFaculty(Website.FaculctyService.FacultyDto facultyDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFaculty/PutFaculty", ReplyAction="http://tempuri.org/IFaculty/PutFacultyResponse")]
-        System.Threading.Tasks.Task<string> PutFacultyAsync(Website.FacultyService.FacultyDto facultyDto);
+        System.Threading.Tasks.Task<string> PutFacultyAsync(Website.FaculctyService.FacultyDto facultyDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFaculty/DeleteFaculty", ReplyAction="http://tempuri.org/IFaculty/DeleteFacultyResponse")]
         string DeleteFaculty(int id);
@@ -148,12 +148,12 @@ namespace Website.FacultyService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IFacultyChannel : Website.FacultyService.IFaculty, System.ServiceModel.IClientChannel {
+    public interface IFacultyChannel : Website.FaculctyService.IFaculty, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class FacultyClient : System.ServiceModel.ClientBase<Website.FacultyService.IFaculty>, Website.FacultyService.IFaculty {
+    public partial class FacultyClient : System.ServiceModel.ClientBase<Website.FaculctyService.IFaculty>, Website.FaculctyService.IFaculty {
         
         public FacultyClient() {
         }
@@ -182,35 +182,35 @@ namespace Website.FacultyService {
             return base.Channel.MessageAsync();
         }
         
-        public Website.FacultyService.FacultyDto[] GetFaculties() {
+        public Website.FaculctyService.FacultyDto[] GetFaculties() {
             return base.Channel.GetFaculties();
         }
         
-        public System.Threading.Tasks.Task<Website.FacultyService.FacultyDto[]> GetFacultiesAsync() {
+        public System.Threading.Tasks.Task<Website.FaculctyService.FacultyDto[]> GetFacultiesAsync() {
             return base.Channel.GetFacultiesAsync();
         }
         
-        public Website.FacultyService.FacultyDto GetFacultyById(int id) {
+        public Website.FaculctyService.FacultyDto GetFacultyById(int id) {
             return base.Channel.GetFacultyById(id);
         }
         
-        public System.Threading.Tasks.Task<Website.FacultyService.FacultyDto> GetFacultyByIdAsync(int id) {
+        public System.Threading.Tasks.Task<Website.FaculctyService.FacultyDto> GetFacultyByIdAsync(int id) {
             return base.Channel.GetFacultyByIdAsync(id);
         }
         
-        public string PostFaculty(Website.FacultyService.FacultyDto facultyDto) {
+        public string PostFaculty(Website.FaculctyService.FacultyDto facultyDto) {
             return base.Channel.PostFaculty(facultyDto);
         }
         
-        public System.Threading.Tasks.Task<string> PostFacultyAsync(Website.FacultyService.FacultyDto facultyDto) {
+        public System.Threading.Tasks.Task<string> PostFacultyAsync(Website.FaculctyService.FacultyDto facultyDto) {
             return base.Channel.PostFacultyAsync(facultyDto);
         }
         
-        public string PutFaculty(Website.FacultyService.FacultyDto facultyDto) {
+        public string PutFaculty(Website.FaculctyService.FacultyDto facultyDto) {
             return base.Channel.PutFaculty(facultyDto);
         }
         
-        public System.Threading.Tasks.Task<string> PutFacultyAsync(Website.FacultyService.FacultyDto facultyDto) {
+        public System.Threading.Tasks.Task<string> PutFacultyAsync(Website.FaculctyService.FacultyDto facultyDto) {
             return base.Channel.PutFacultyAsync(facultyDto);
         }
         

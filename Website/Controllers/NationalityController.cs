@@ -26,7 +26,14 @@ namespace Website.Controllers
         // GET: Nationality/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            NationalityVM nationalityVM = new NationalityVM();
+
+            using (NationalityService.NationalityClient service = new NationalityService.NationalityClient())
+            {
+                var nationalityDto = service.GetNationalityByID(id);
+                nationalityVM = new NationalityVM(nationalityDto);
+            }
+            return View(nationalityVM);
         }
 
         // GET: Nationality/Create
@@ -72,18 +79,46 @@ namespace Website.Controllers
         // GET: Nationality/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            NationalityVM nationalityVM = new NationalityVM();
+            using(NationalityService.NationalityClient service = new NationalityService.NationalityClient())
+            {
+                var nationalityDto = service.GetNationalityByID(id);
+                nationalityVM = new NationalityVM(nationalityDto);
+            }
+            return View(nationalityVM);
         }
 
         // POST: Nationality/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(NationalityVM nationalityVM)
         {
             try
             {
-                // TODO: Add update logic here
+                if(ModelState.IsValid)
+                {
 
-                return RedirectToAction("Index");
+                    using (NationalityService.NationalityClient service = new NationalityService.NationalityClient())
+                    {
+                        NationalityService.NationalityDto nationalityDto = new NationalityService.NationalityDto
+                        {
+                            Id = nationalityVM.Id,
+                            Title = nationalityVM.Title
+                        };
+                        foreach (var item in service.GetNationalities())
+                        {
+                            if (item.Title == nationalityDto.Title)
+                            {
+                                ModelState.AddModelError("", "Nationality already exists!");
+                                return View();
+                            }
+                        }
+                        service.PostNationality(nationalityDto);
+                    }
+
+                    return RedirectToAction("Index");
+                }
+                return View();
             }
             catch
             {

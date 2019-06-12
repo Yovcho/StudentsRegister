@@ -134,7 +134,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Connected Services\FacultyService\Reference.cs">
+    <Compile Include="Connected Services\FaculctyService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -157,18 +157,25 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\LoadDataUtils.cs" />
     <Compile Include="ViewModels\FacultyVM.cs" />
     <Compile Include="ViewModels\NationalityVM.cs" />
     <Compile Include="ViewModels\StudentVM.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\FacultyService\Faculty.disco" />
-    <None Include="Connected Services\FacultyService\configuration91.svcinfo" />
-    <None Include="Connected Services\FacultyService\configuration.svcinfo" />
-    <None Include="Connected Services\FacultyService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
+    <None Include="Connected Services\FaculctyService\Faculty.wsdl" />
+    <None Include="Connected Services\FaculctyService\Faculty.xsd">
+      <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\FaculctyService\Faculty1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FaculctyService\Faculty2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\FaculctyService\Website.FaculctyService.FacultyDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\NationalityService\Nationality.disco" />
     <None Include="Connected Services\NationalityService\configuration91.svcinfo" />
     <None Include="Connected Services\NationalityService\configuration.svcinfo" />
@@ -183,6 +190,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\FaculctyService\Faculty.disco" />
+    <None Include="Connected Services\FaculctyService\configuration91.svcinfo" />
+    <None Include="Connected Services\FaculctyService\configuration.svcinfo" />
+    <None Include="Connected Services\FaculctyService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -193,19 +207,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Connected Services\FacultyService\Faculty.wsdl" />
-    <None Include="Connected Services\FacultyService\Faculty.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\FacultyService\Faculty1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\FacultyService\Faculty2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Connected Services\FacultyService\Website.FacultyService.FacultyDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Connected Services\NationalityService\Nationality.wsdl" />
     <None Include="Connected Services\NationalityService\Nationality.xsd">
       <SubType>Designer</SubType>
@@ -258,7 +259,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Faculty\Index.cshtml" />
-    <Content Include="Views\Faculty\Details.cshtml" />
     <Content Include="Views\Faculty\Create.cshtml" />
     <Content Include="Views\Faculty\Edit.cshtml" />
     <Content Include="Views\Nationality\Index.cshtml" />
@@ -269,6 +269,7 @@
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />
     <Content Include="Views\Students\Edit.cshtml" />
+    <Content Include="Views\Faculty\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -291,7 +292,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\FacultyService\" />
+    <WCFMetadataStorage Include="Connected Services\FaculctyService\" />
     <WCFMetadataStorage Include="Connected Services\NationalityService\" />
     <WCFMetadataStorage Include="Connected Services\StudentService\" />
   </ItemGroup>

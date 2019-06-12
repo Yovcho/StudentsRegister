@@ -113,7 +113,14 @@ namespace ApplicationServices.Implementations
                         Nationality = nationality,
                         Faculty = faculty
                     };
-                    unitOfWork.StudentsRepository.Insert(student);
+                    if (studentDto.Id==0)
+                    {
+                        unitOfWork.StudentsRepository.Insert(student);
+                    }
+                    else
+                    {
+                        unitOfWork.StudentsRepository.Update(student);
+                    }
                     unitOfWork.Save();
                 }
                     return true;

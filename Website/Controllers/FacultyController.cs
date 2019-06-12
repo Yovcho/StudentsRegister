@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Website.ViewModels;
 
 namespace Website.Controllers
 {
@@ -11,13 +12,27 @@ namespace Website.Controllers
         // GET: Faculty
         public ActionResult Index()
         {
-            return View();
+            List<FacultyVM> facultyVMs = new List<FacultyVM>();
+            using (FaculctyService.FacultyClient service = new FaculctyService.FacultyClient())
+            {
+                foreach (var item in service.GetFaculties())
+                {
+                    facultyVMs.Add(new FacultyVM(item));
+                }
+            }
+            return View(facultyVMs);
         }
 
         // GET: Faculty/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            FacultyVM facultyVM = new FacultyVM();
+            using (FaculctyService.FacultyClient service = new FaculctyService.FacultyClient())
+            {
+                var facultyDto = service.GetFacultyById(id);
+                facultyVM = new FacultyVM(facultyDto);
+            }
+            return View(facultyVM);
         }
 
         // GET: Faculty/Create
@@ -28,12 +43,30 @@ namespace Website.Controllers
 
         // POST: Faculty/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(FacultyVM facultyVM)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                using (FaculctyService.FacultyClient service = new FaculctyService.FacultyClient())
+                {
+                    FaculctyService.FacultyDto facultyDto = new FaculctyService.FacultyDto
+                    {
+                        Id = facultyVM.Id,
+                        Name = facultyVM.Name,
+                        City = facultyVM.City,
+                        Address = facultyVM.Address
+                    };
+                    foreach (var item in service.GetFaculties())
+                    {
+                        if(item.Name==facultyDto.Name)
+                        {
+                            ModelState.AddModelError("", "Faculty already exists!");
+                            return View();
+                        }
+                    }
+                    service.PostFaculty(facultyDto);
+                }
                 return RedirectToAction("Index");
             }
             catch
@@ -45,17 +78,41 @@ namespace Website.Controllers
         // GET: Faculty/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            FacultyVM facultyVM = new FacultyVM();
+            using (FaculctyService.FacultyClient service = new FaculctyService.FacultyClient())        
+            {
+                var facultyDto = service.GetFacultyById(id);
+                facultyVM = new FacultyVM(facultyDto);
+            }
+            return View(facultyVM);
         }
 
         // POST: Faculty/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(FacultyVM facultyVM )
         {
             try
             {
-                // TODO: Add update logic here
-
+                using (FaculctyService.FacultyClient service = new FaculctyService.FacultyClient())
+                {
+                    FaculctyService.FacultyDto facultyDto = new FaculctyService.FacultyDto
+                    {
+                        Id = facultyVM.Id,
+                        Name = facultyVM.Name,
+                        City = facultyVM.City,
+                        Address = facultyVM.Address
+                    };
+                    foreach (var item in service.GetFaculties())
+                    {
+                        if (item.Name == facultyDto.Name)
+                        {
+                            ModelState.AddModelError("", "Faculty already exists!");
+                            return View();
+                        }
+                    }
+                    service.PostFaculty(facultyDto);
+                }
                 return RedirectToAction("Index");
             }
             catch
@@ -67,23 +124,11 @@ namespace Website.Controllers
         // GET: Faculty/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
-        }
-
-        // POST: Faculty/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
+            using (FaculctyService.FacultyClient service = new FaculctyService.FacultyClient())
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                service.DeleteFaculty(id);
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
     }
 }

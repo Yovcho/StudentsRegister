@@ -24,11 +24,11 @@
             @Html.DisplayNameFor(model => model.Comment)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NationalityId)
+            @Html.DisplayNameFor(model => model.NationalityVM.Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FacultyId)
-        </th>
+            @Html.DisplayNameFor(model => model.FacultyVM.Name)
+        </th>     
         <th></th>
     </tr>
 
@@ -47,10 +47,10 @@
             @Html.DisplayFor(modelItem => item.Comment)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.NationalityId)
+            @Html.DisplayFor(modelItem => item.NationalityVM.Title)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FacultyId)
+            @Html.DisplayFor(modelItem => item.FacultyVM.Name)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

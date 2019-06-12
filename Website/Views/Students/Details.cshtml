@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>StudentVM</h4>
+    <h4>Student Details</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -43,19 +43,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NationalityId)
+            @Html.DisplayNameFor(model => model.NationalityVM.Title)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NationalityId)
+            @Html.DisplayFor(model => model.NationalityVM.Title)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FacultyId)
+            @Html.DisplayNameFor(model => model.FacultyVM.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FacultyId)
+            @Html.DisplayFor(model => model.FacultyVM.Name)
         </dd>
 
     </dl>

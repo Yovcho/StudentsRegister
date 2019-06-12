@@ -11,7 +11,7 @@ namespace Website.ViewModels
     public class NationalityVM
     {
         public int Id { get; set; }
-        [DisplayName("Title")]
+        [DisplayName("Nationality")]
         [Required(ErrorMessage = "This field is required!")]
         public string Title { get; set; }
 
