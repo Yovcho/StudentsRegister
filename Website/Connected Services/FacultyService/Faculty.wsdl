@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Faculty" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:53947/Faculty.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:53947/Faculty.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:53947/Faculty.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ApplicationServices.DTOs" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFaculty_Message_InputMessage">
+    <wsdl:part name="parameters" element="tns:Message" />
+  </wsdl:message>
+  <wsdl:message name="IFaculty_Message_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFaculty_GetFaculties_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFaculties" />
+  </wsdl:message>
+  <wsdl:message name="IFaculty_GetFaculties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFacultiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFaculty_GetFacultyById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFacultyById" />
+  </wsdl:message>
+  <wsdl:message name="IFaculty_GetFacultyById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFacultyByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFaculty_PostFaculty_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostFaculty" />
+  </wsdl:message>
+  <wsdl:message name="IFaculty_PostFaculty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostFacultyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFaculty_PutFaculty_InputMessage">
+    <wsdl:part name="parameters" element="tns:PutFaculty" />
+  </wsdl:message>
+  <wsdl:message name="IFaculty_PutFaculty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PutFacultyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFaculty_DeleteFaculty_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFaculty" />
+  </wsdl:message>
+  <wsdl:message name="IFaculty_DeleteFaculty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFacultyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFaculty">
+    <wsdl:operation name="Message">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaculty/Message" message="tns:IFaculty_Message_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaculty/MessageResponse" message="tns:IFaculty_Message_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFaculties">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaculty/GetFaculties" message="tns:IFaculty_GetFaculties_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaculty/GetFacultiesResponse" message="tns:IFaculty_GetFaculties_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFacultyById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaculty/GetFacultyById" message="tns:IFaculty_GetFacultyById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaculty/GetFacultyByIdResponse" message="tns:IFaculty_GetFacultyById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostFaculty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaculty/PostFaculty" message="tns:IFaculty_PostFaculty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaculty/PostFacultyResponse" message="tns:IFaculty_PostFaculty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutFaculty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaculty/PutFaculty" message="tns:IFaculty_PutFaculty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaculty/PutFacultyResponse" message="tns:IFaculty_PutFaculty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFaculty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaculty/DeleteFaculty" message="tns:IFaculty_DeleteFaculty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaculty/DeleteFacultyResponse" message="tns:IFaculty_DeleteFaculty_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFaculty" type="tns:IFaculty">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Message">
+      <soap:operation soapAction="http://tempuri.org/IFaculty/Message" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFaculties">
+      <soap:operation soapAction="http://tempuri.org/IFaculty/GetFaculties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFacultyById">
+      <soap:operation soapAction="http://tempuri.org/IFaculty/GetFacultyById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostFaculty">
+      <soap:operation soapAction="http://tempuri.org/IFaculty/PostFaculty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PutFaculty">
+      <soap:operation soapAction="http://tempuri.org/IFaculty/PutFaculty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFaculty">
+      <soap:operation soapAction="http://tempuri.org/IFaculty/DeleteFaculty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Faculty">
+    <wsdl:port name="BasicHttpBinding_IFaculty" binding="tns:BasicHttpBinding_IFaculty">
+      <soap:address location="http://localhost:53947/Faculty.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

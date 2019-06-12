@@ -1,0 +1,15 @@
+C:\Users\Iovcho\source\repos\StudentRegister2\Repositories\bin\Debug\Repositories.dll.config
+C:\Users\Iovcho\source\repos\StudentRegister2\Repositories\bin\Debug\Repositories.dll
+C:\Users\Iovcho\source\repos\StudentRegister2\Repositories\bin\Debug\Repositories.pdb
+C:\Users\Iovcho\source\repos\StudentRegister2\Repositories\bin\Debug\Data.dll
+C:\Users\Iovcho\source\repos\StudentRegister2\Repositories\bin\Debug\EntityFramework.dll
+C:\Users\Iovcho\source\repos\StudentRegister2\Repositories\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Iovcho\source\repos\StudentRegister2\Repositories\bin\Debug\Data.pdb
+C:\Users\Iovcho\source\repos\StudentRegister2\Repositories\bin\Debug\Data.dll.config
+C:\Users\Iovcho\source\repos\StudentRegister2\Repositories\bin\Debug\EntityFramework.xml
+C:\Users\Iovcho\source\repos\StudentRegister2\Repositories\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Iovcho\source\repos\StudentRegister2\Repositories\obj\Debug\Repositories.csprojAssemblyReference.cache
+C:\Users\Iovcho\source\repos\StudentRegister2\Repositories\obj\Debug\Repositories.csproj.CoreCompileInputs.cache
+C:\Users\Iovcho\source\repos\StudentRegister2\Repositories\obj\Debug\Repositories.csproj.CopyComplete
+C:\Users\Iovcho\source\repos\StudentRegister2\Repositories\obj\Debug\Repositories.dll
+C:\Users\Iovcho\source\repos\StudentRegister2\Repositories\obj\Debug\Repositories.pdb

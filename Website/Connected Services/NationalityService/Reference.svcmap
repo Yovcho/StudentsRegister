@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="edea50bb-f0d5-4c8f-b7b7-471416063950" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:53947/Nationality.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Nationality.xsd" MetadataType="Schema" ID="e6ba659e-8ba3-44ae-96c7-c92f51daa9f1" SourceId="1" SourceUrl="http://localhost:53947/Nationality.svc?xsd=xsd2" />
+    <MetadataFile FileName="Nationality1.xsd" MetadataType="Schema" ID="b49cc41d-0dfc-4fa7-be98-d58d2bd2e3e1" SourceId="1" SourceUrl="http://localhost:53947/Nationality.svc?xsd=xsd0" />
+    <MetadataFile FileName="Nationality2.xsd" MetadataType="Schema" ID="d1d2ae00-3927-435e-a05a-2875d076483b" SourceId="1" SourceUrl="http://localhost:53947/Nationality.svc?xsd=xsd1" />
+    <MetadataFile FileName="Nationality.disco" MetadataType="Disco" ID="f288a806-5ee0-4a0c-8547-71917503997b" SourceId="1" SourceUrl="http://localhost:53947/Nationality.svc?disco" />
+    <MetadataFile FileName="Nationality.wsdl" MetadataType="Wsdl" ID="78fc1045-9835-4345-9e97-60c75b16a3e0" SourceId="1" SourceUrl="http://localhost:53947/Nationality.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

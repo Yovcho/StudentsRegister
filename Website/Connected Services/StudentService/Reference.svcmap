@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="da3ff940-7017-44ea-9084-b8a53eba8c4b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:53947/Student.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Student.xsd" MetadataType="Schema" ID="0e5edbb4-98da-4546-8210-f33e4aa0c820" SourceId="1" SourceUrl="http://localhost:53947/Student.svc?xsd=xsd0" />
+    <MetadataFile FileName="Student.disco" MetadataType="Disco" ID="d5097201-db7d-4e4e-9e0e-810cf22f7183" SourceId="1" SourceUrl="http://localhost:53947/Student.svc?disco" />
+    <MetadataFile FileName="Student1.xsd" MetadataType="Schema" ID="4f5b9ea2-77b4-47fb-bc3b-b86aefffca42" SourceId="1" SourceUrl="http://localhost:53947/Student.svc?xsd=xsd2" />
+    <MetadataFile FileName="Student.wsdl" MetadataType="Wsdl" ID="28807c47-c12b-4ed6-8699-855affcdbcb5" SourceId="1" SourceUrl="http://localhost:53947/Student.svc?wsdl" />
+    <MetadataFile FileName="Student2.xsd" MetadataType="Schema" ID="885440e0-7a38-4c81-be7c-5a76757cc8db" SourceId="1" SourceUrl="http://localhost:53947/Student.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

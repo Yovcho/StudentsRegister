@@ -1,0 +1,12 @@
+C:\Users\Iovcho\source\repos\StudentRegister2\Data\bin\Debug\Data.dll.config
+C:\Users\Iovcho\source\repos\StudentRegister2\Data\bin\Debug\Data.dll
+C:\Users\Iovcho\source\repos\StudentRegister2\Data\bin\Debug\Data.pdb
+C:\Users\Iovcho\source\repos\StudentRegister2\Data\bin\Debug\EntityFramework.dll
+C:\Users\Iovcho\source\repos\StudentRegister2\Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Iovcho\source\repos\StudentRegister2\Data\bin\Debug\EntityFramework.xml
+C:\Users\Iovcho\source\repos\StudentRegister2\Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Iovcho\source\repos\StudentRegister2\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\Iovcho\source\repos\StudentRegister2\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\Iovcho\source\repos\StudentRegister2\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\Iovcho\source\repos\StudentRegister2\Data\obj\Debug\Data.dll
+C:\Users\Iovcho\source\repos\StudentRegister2\Data\obj\Debug\Data.pdb
