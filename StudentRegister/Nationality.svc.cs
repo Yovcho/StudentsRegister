@@ -15,11 +15,6 @@ namespace StudentRegister
     {
         private  NationalityServiceApplication nationalityService = new NationalityServiceApplication();
 
-        public string Message()
-        {
-            return "The WCF service is up.";
-        }
-
         //vrushta list s obekti
         public List<NationalityDto> GetNationalities()
         {

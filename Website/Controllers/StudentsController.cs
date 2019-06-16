@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Website.Models;
 using Website.Utils;
 using Website.ViewModels;
 
@@ -10,16 +11,24 @@ namespace Website.Controllers
 {
     public class StudentsController : Controller
     {
+        StudentsClientModel _service = new StudentsClientModel();
         [HttpGet]
         public ActionResult Index()
         {
             List<StudentVM> studentVMs = new List<StudentVM>();
-            using(StudentService.StudentClient service = new StudentService.StudentClient())
+            try
             {
-                foreach (var item in service.GetStudents())
+                using (_service.Service)
                 {
-                    studentVMs.Add(new StudentVM(item));
+                    foreach (var item in _service.Service.GetStudents())
+                    {
+                        studentVMs.Add(new StudentVM(item));
+                    }
                 }
+            }
+            catch
+            {
+                return View("Error");
             }
             return View(studentVMs);
         }
@@ -28,10 +37,17 @@ namespace Website.Controllers
         public ActionResult Details(int id)
         {
             StudentVM studentVM = new StudentVM();
-            using (StudentService.StudentClient service = new StudentService.StudentClient())
+            try
             {
-                var studentDto = service.GetStudentById(id);
-                studentVM = new StudentVM(studentDto);
+                using (_service.Service)
+                {
+                    var studentDto = _service.Service.GetStudentById(id);
+                    studentVM = new StudentVM(studentDto);
+                }
+            }
+            catch
+            {
+                return View("Error");
             }
             return View(studentVM);
         }
@@ -50,7 +66,7 @@ namespace Website.Controllers
         {
             try
             {
-                using (StudentService.StudentClient service = new StudentService.StudentClient())
+                using (_service.Service)
                 {
                     StudentService.StudentDto studentDto = new StudentService.StudentDto
                     {
@@ -68,7 +84,7 @@ namespace Website.Controllers
                             Id = studentVM.NationalityId
                         }
                     };
-                    service.PostStudent(studentDto);
+                    _service.Service.PostStudent(studentDto);
                 }
                 ViewBag.Nationalities = LoadDataUtils.LoadNationalityData();
                 ViewBag.Faculties = LoadDataUtils.LoadFacultyData();
@@ -83,14 +99,22 @@ namespace Website.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
+
             StudentVM studentVM = new StudentVM();
-            using (StudentService.StudentClient service = new StudentService.StudentClient())
+            try
             {
-                var studentDto = service.GetStudentById(id);
-                studentVM = new StudentVM(studentDto);
+                using (_service.Service)
+                {
+                    var studentDto = _service.Service.GetStudentById(id);
+                    studentVM = new StudentVM(studentDto);
+                }
+                ViewBag.Nationalities = LoadDataUtils.LoadNationalityData();
+                ViewBag.Faculties = LoadDataUtils.LoadFacultyData();
             }
-            ViewBag.Nationalities = LoadDataUtils.LoadNationalityData();
-            ViewBag.Faculties = LoadDataUtils.LoadFacultyData();
+            catch
+            {
+                return View("Error");
+            }
             return View(studentVM);
         }
 
@@ -100,7 +124,7 @@ namespace Website.Controllers
         {
             try
             {
-                using (StudentService.StudentClient service = new StudentService.StudentClient())
+                using (_service.Service)
                 {
                     StudentService.StudentDto studentDto = new StudentService.StudentDto
                     {
@@ -118,7 +142,7 @@ namespace Website.Controllers
                             Id = studentVM.NationalityId
                         }
                     };
-                    service.PostStudent(studentDto);
+                    _service.Service.PostStudent(studentDto);
                 }
                 ViewBag.Nationalities = LoadDataUtils.LoadNationalityData();
                 ViewBag.Faculties = LoadDataUtils.LoadFacultyData();
@@ -132,10 +156,19 @@ namespace Website.Controllers
 
         public ActionResult Delete(int id)
         {
-            using (StudentService.StudentClient service = new StudentService.StudentClient())
+
+            try
             {
-                service.DeleteStudent(id);
+                using (_service.Service)
+                {
+                    _service.Service.DeleteStudent(id);
+                }
             }
+            catch
+            {
+                return View("Error");
+            }
+
             return RedirectToAction("Index");
         }
     }

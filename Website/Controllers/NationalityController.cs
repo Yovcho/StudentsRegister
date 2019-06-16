@@ -1,24 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Website.Models;
 using Website.ViewModels;
 
 namespace Website.Controllers
 {
     public class NationalityController : Controller
     {
+        NationalitiesClientModel _service = new NationalitiesClientModel();
         // GET: Nationality
         public ActionResult Index()
         {
             List<NationalityVM> nationalityVM = new List<NationalityVM>();
-            using (NationalityService.NationalityClient service = new NationalityService.NationalityClient())
+            try
             {
-                foreach (var item in service.GetNationalities())
+                using (_service.Service)
                 {
-                    nationalityVM.Add(new NationalityVM(item));
+                    foreach (var item in _service.Service.GetNationalities())
+                    {
+                        nationalityVM.Add(new NationalityVM(item));
+                    }
                 }
+            }
+            catch
+            {
+                return View("Error");
             }
             return View(nationalityVM);
         }
@@ -27,11 +37,17 @@ namespace Website.Controllers
         public ActionResult Details(int id)
         {
             NationalityVM nationalityVM = new NationalityVM();
-
-            using (NationalityService.NationalityClient service = new NationalityService.NationalityClient())
+            try
             {
-                var nationalityDto = service.GetNationalityByID(id);
-                nationalityVM = new NationalityVM(nationalityDto);
+                using (_service.Service)
+                {
+                    var nationalityDto = _service.Service.GetNationalityByID(id);
+                    nationalityVM = new NationalityVM(nationalityDto);
+                }
+            }
+            catch
+            {
+                return View("Error");
             }
             return View(nationalityVM);
         }
@@ -40,7 +56,7 @@ namespace Website.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-                return View();
+            return View();
         }
 
         // POST: Nationality/Create
@@ -50,22 +66,22 @@ namespace Website.Controllers
         {
             try
             {
-                using (NationalityService.NationalityClient service = new NationalityService.NationalityClient())
+                using (_service.Service)
                 {
                     NationalityService.NationalityDto nationalityDto = new NationalityService.NationalityDto
                     {
                         Id = nationalityVM.Id,
                         Title = nationalityVM.Title
-                    };                 
-                    foreach (var item in service.GetNationalities())
+                    };
+                    foreach (var item in _service.Service.GetNationalities())
                     {
-                        if(item.Title==nationalityDto.Title)
+                        if (item.Title == nationalityDto.Title)
                         {
                             ModelState.AddModelError("", "Nationality already exists!");
                             return View();
                         }
                     }
-                    service.PostNationality(nationalityDto);
+                    _service.Service.PostNationality(nationalityDto);
                 }
 
                 return RedirectToAction("Index");
@@ -79,11 +95,19 @@ namespace Website.Controllers
         // GET: Nationality/Edit/5
         public ActionResult Edit(int id)
         {
+
             NationalityVM nationalityVM = new NationalityVM();
-            using(NationalityService.NationalityClient service = new NationalityService.NationalityClient())
+            try
             {
-                var nationalityDto = service.GetNationalityByID(id);
-                nationalityVM = new NationalityVM(nationalityDto);
+                using (_service.Service)
+                {
+                    var nationalityDto = _service.Service.GetNationalityByID(id);
+                    nationalityVM = new NationalityVM(nationalityDto);
+                }
+            }
+            catch
+            {
+                return View("Error");
             }
             return View(nationalityVM);
         }
@@ -95,17 +119,17 @@ namespace Website.Controllers
         {
             try
             {
-                if(ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
 
-                    using (NationalityService.NationalityClient service = new NationalityService.NationalityClient())
+                    using (_service.Service)
                     {
                         NationalityService.NationalityDto nationalityDto = new NationalityService.NationalityDto
                         {
                             Id = nationalityVM.Id,
                             Title = nationalityVM.Title
                         };
-                        foreach (var item in service.GetNationalities())
+                        foreach (var item in _service.Service.GetNationalities())
                         {
                             if (item.Title == nationalityDto.Title)
                             {
@@ -113,7 +137,7 @@ namespace Website.Controllers
                                 return View();
                             }
                         }
-                        service.PostNationality(nationalityDto);
+                        _service.Service.PostNationality(nationalityDto);
                     }
 
                     return RedirectToAction("Index");
@@ -130,10 +154,16 @@ namespace Website.Controllers
         public ActionResult Delete(int id)
         {
             NationalityVM nationalityVM = new NationalityVM();
-
-            using (NationalityService.NationalityClient service = new NationalityService.NationalityClient() )
+            try
             {
-                service.DeleteNationality(id);
+                using (_service.Service)
+                {
+                    _service.Service.DeleteNationality(id);
+                }
+            }
+            catch
+            {
+                return View("Error");
             }
             return RedirectToAction("Index");
         }

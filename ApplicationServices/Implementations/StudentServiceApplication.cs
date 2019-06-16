@@ -111,7 +111,9 @@ namespace ApplicationServices.Implementations
                         DateOfBirth = studentDto.DateOfBirth,
                         Comment = studentDto.Comment,
                         Nationality = nationality,
-                        Faculty = faculty
+                        Faculty = faculty,
+                        NationalityId=nationality.Id,
+                        FacultyId=faculty.Id
                     };
                     if (studentDto.Id==0)
                     {

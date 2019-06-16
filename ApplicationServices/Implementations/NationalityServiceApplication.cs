@@ -51,6 +51,7 @@ namespace ApplicationServices.Implementations
         {
             Nationality nationality = new Nationality
             {
+                Id = nationalityDto.Id,
                 Title = nationalityDto.Title
             };
             try

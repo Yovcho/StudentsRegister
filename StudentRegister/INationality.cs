@@ -12,8 +12,6 @@ namespace StudentRegister
     [ServiceContract]
     public interface INationality
     {
-        [OperationContract]
-        string Message();
 
         [OperationContract]
         List<NationalityDto> GetNationalities();

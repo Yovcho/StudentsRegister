@@ -33,11 +33,6 @@ namespace StudentRegister
             return studentService.Get();
         }
 
-        public string Message()
-        {
-            return "WCF service is up!";
-        }
-
         public string PostStudent(StudentDto studentDto)
         {
             if(!studentService.Save(studentDto))

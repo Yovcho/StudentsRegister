@@ -164,3 +164,14 @@ C:\Users\Iovcho\Desktop\StudentRegister2\Website\obj\Debug\Website.csproj.CoreCo
 C:\Users\Iovcho\Desktop\StudentRegister2\Website\obj\Debug\Website.csproj.CopyComplete
 C:\Users\Iovcho\Desktop\StudentRegister2\Website\obj\Debug\Website.dll
 C:\Users\Iovcho\Desktop\StudentRegister2\Website\obj\Debug\Website.pdb
+C:\Users\Iovcho\Desktop\StudentRegister2\Website\bin\StudentRegister.dll
+C:\Users\Iovcho\Desktop\StudentRegister2\Website\bin\ApplicationServices.dll
+C:\Users\Iovcho\Desktop\StudentRegister2\Website\bin\Repositories.dll
+C:\Users\Iovcho\Desktop\StudentRegister2\Website\bin\Data.dll
+C:\Users\Iovcho\Desktop\StudentRegister2\Website\bin\StudentRegister.pdb
+C:\Users\Iovcho\Desktop\StudentRegister2\Website\bin\StudentRegister.dll.config
+C:\Users\Iovcho\Desktop\StudentRegister2\Website\bin\ApplicationServices.pdb
+C:\Users\Iovcho\Desktop\StudentRegister2\Website\bin\Repositories.pdb
+C:\Users\Iovcho\Desktop\StudentRegister2\Website\bin\Repositories.dll.config
+C:\Users\Iovcho\Desktop\StudentRegister2\Website\bin\Data.pdb
+C:\Users\Iovcho\Desktop\StudentRegister2\Website\bin\Data.dll.config

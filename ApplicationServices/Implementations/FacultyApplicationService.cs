@@ -54,6 +54,7 @@ namespace ApplicationServices.Implementations
         {
             Faculty faculty = new Faculty
             {
+                Id = facultyDto.Id,
                 Name = facultyDto.Name,
                 City = facultyDto.City,
                 Address = facultyDto.Address

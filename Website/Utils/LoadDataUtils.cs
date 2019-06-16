@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Website.Models;
 
 namespace Website.Utils
 {
@@ -10,16 +11,19 @@ namespace Website.Utils
     {
         public static SelectList LoadNationalityData()
         {
-            using (NationalityService.NationalityClient service = new NationalityService.NationalityClient())
+            NationalitiesClientModel _service = new NationalitiesClientModel();
+
+            using (_service.Service)
             {
-                return new SelectList(service.GetNationalities(), "Id", "Title");
+                return new SelectList(_service.Service.GetNationalities(), "Id", "Title");
             }
         }
         public static SelectList LoadFacultyData()
         {
-            using (FaculctyService.FacultyClient service = new FaculctyService.FacultyClient())
+            FacultiesClientModel _service = new FacultiesClientModel();
+            using (_service.Service)
             {
-                return new SelectList(service.GetFaculties(), "Id", "Name");
+                return new SelectList(_service.Service.GetFaculties(), "Id", "Name");
             }
         }
     }

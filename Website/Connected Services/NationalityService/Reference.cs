@@ -78,12 +78,6 @@ namespace Website.NationalityService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="NationalityService.INationality")]
     public interface INationality {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INationality/Message", ReplyAction="http://tempuri.org/INationality/MessageResponse")]
-        string Message();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INationality/Message", ReplyAction="http://tempuri.org/INationality/MessageResponse")]
-        System.Threading.Tasks.Task<string> MessageAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INationality/GetNationalities", ReplyAction="http://tempuri.org/INationality/GetNationalitiesResponse")]
         Website.NationalityService.NationalityDto[] GetNationalities();
         
@@ -140,14 +134,6 @@ namespace Website.NationalityService {
         
         public NationalityClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public string Message() {
-            return base.Channel.Message();
-        }
-        
-        public System.Threading.Tasks.Task<string> MessageAsync() {
-            return base.Channel.MessageAsync();
         }
         
         public Website.NationalityService.NationalityDto[] GetNationalities() {

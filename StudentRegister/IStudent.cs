@@ -13,8 +13,6 @@ namespace StudentRegister
     public interface IStudent
     {
         [OperationContract]
-         string Message();
-        [OperationContract]
         List<StudentDto> GetStudents();
         [OperationContract]
         StudentDto GetStudentById(int id);

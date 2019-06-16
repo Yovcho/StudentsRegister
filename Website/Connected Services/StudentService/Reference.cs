@@ -312,12 +312,6 @@ namespace Website.StudentService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="StudentService.IStudent")]
     public interface IStudent {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudent/Message", ReplyAction="http://tempuri.org/IStudent/MessageResponse")]
-        string Message();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudent/Message", ReplyAction="http://tempuri.org/IStudent/MessageResponse")]
-        System.Threading.Tasks.Task<string> MessageAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudent/GetStudents", ReplyAction="http://tempuri.org/IStudent/GetStudentsResponse")]
         Website.StudentService.StudentDto[] GetStudents();
         
@@ -374,14 +368,6 @@ namespace Website.StudentService {
         
         public StudentClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public string Message() {
-            return base.Channel.Message();
-        }
-        
-        public System.Threading.Tasks.Task<string> MessageAsync() {
-            return base.Channel.MessageAsync();
         }
         
         public Website.StudentService.StudentDto[] GetStudents() {
